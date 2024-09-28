@@ -4,14 +4,21 @@ import style from './about.module.scss'
 const About = () => {
     return (
         <div className={style.about}>
-            <div className={style.container}>
-                <div className={style.row}>
-                    <div className={style['col-6']}>
-                        <div className={style.check}>
-                            about
-                        </div>
-                    </div>
-                </div>
+            <div className="grid grid-cols-4 gap-4">
+                <div className="text-3xl font-bold underline">01</div>
+                <div>09</div>
+                <div>01</div>
+                <div>09</div>
+                <div>01</div>
+                <div>09</div>
+                <div>01</div>
+                <div>09</div>
+                <div>01</div>
+                <div>09</div>
+                <div>01</div>
+                <div>09</div>
+                <div>01</div>
+                <div>09</div>
             </div>
         </div>
     );
