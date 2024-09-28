@@ -8,7 +8,7 @@ const About = () => {
                 <div className={style.row}>
                     <div className={style['col-6']}>
                         <div className={style.check}>
-                            hi
+                            about
                         </div>
                     </div>
                 </div>
