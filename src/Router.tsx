@@ -35,12 +35,12 @@ const renderLayout = (element: JSX.Element, Layout?: React.FC<{ children: React.
     );
 };
 
-const router = createBrowserRouter(
-    routes.map(route => ({
-        ...route,
-        element: renderLayout(route.element, route.layout),
-    }))
-);
+const mappedRoutes = routes.map(route => ({
+    ...route,
+    element: renderLayout(route.element, route.layout),
+}));
+
+const router = createBrowserRouter(mappedRoutes);
 
 const AppRouter: React.FC = () => {
     return (
