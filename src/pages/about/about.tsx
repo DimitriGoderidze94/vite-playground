@@ -4,7 +4,7 @@ import style from './about.module.scss'
 const About = () => {
     return (
         <div className={style.about}>
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto p-4">
                 <div className="grid grid-cols-4 gap-1">
                     <div className="border solid">01</div>
                     <div className="border solid">01</div>
