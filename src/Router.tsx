@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import { About, List } from './pages/index';
-import { DefaultLayout, LayoutWithoutFooter } from './layouts';
+import { DefaultLayout } from './layouts';
 
 interface Route {
     path: string;
@@ -18,10 +18,14 @@ const routes: Route[] = [
         path: '/about',
         element: <About />,
     },
+    // {
+    //     path: '/List',
+    //     element: <List />,
+    //     layout: LayoutWithoutFooter,
+    // },
     {
         path: '/List',
-        element: <List />,
-        layout: LayoutWithoutFooter,
+        element: <List />
     },
 ];
 
