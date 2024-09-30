@@ -1,0 +1,9 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $header-height;
+    width: 100%;
+    border: 1px solid rgb(160, 117, 117);
+    overflow: hidden;
+}
