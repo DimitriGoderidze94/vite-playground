@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
+import style from "./button.module.scss";
 
 interface ButtonProps {
     className: string
@@ -10,7 +11,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({ className, text, onClick, disabled }) => {
     return (
-        <button disabled={disabled} onClick={onClick} className={className}>
+        <button disabled={disabled} onClick={onClick} className={`${style.btn} ${style[className]}`}>
             {text}
         </button>
     )
