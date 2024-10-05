@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useOutsideClick } from '../../costum-hooks';
 interface ModalProps {
     isOpen: boolean;
@@ -8,9 +8,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
-    const modalRef = useRef<HTMLDivElement>(null);
-
-    useOutsideClick(modalRef, onClose, isOpen);
+    const modalRef = useOutsideClick(onClose, isOpen);
 
     return (
         <div
