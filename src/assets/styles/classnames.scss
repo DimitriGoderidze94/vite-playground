@@ -3,6 +3,11 @@
 .btn {
     border-radius: 4px;
 
+    &:hover {
+        opacity: 0.7;
+        border-color: transparent;
+    }
+
     &.primary {
         background-color: $primary;
         color: white;
