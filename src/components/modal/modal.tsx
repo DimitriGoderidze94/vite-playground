@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-
+import React, { useRef } from 'react';
+import { useOutsideClick } from '../../costum-hooks';
 interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -10,23 +10,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     const modalRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-                onClose();
-            }
-        };
-
-        if (isOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        } else {
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [isOpen, onClose]);
+    useOutsideClick(modalRef, onClose, isOpen);
 
     return (
         <div
