@@ -31,16 +31,17 @@ const List: React.FC = () => {
                     <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
-                        className="flex flex-col space-y-2"
+                        className="flex flex-col space-y-2 p-4 bg-gray-100 rounded-lg shadow-md"
                     >
                         {list.map(({ item, id }, index) => (
                             <Draggable key={id} draggableId={id} index={index}>
-                                {(provided) => (
+                                {(provided, snapshot) => (
                                     <div
                                         ref={provided.innerRef}
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
-                                        className="border border-solid p-2 bg-white shadow rounded"
+                                        className={`border border-gray-300 p-3 rounded-md transition-all duration-300 ease-in-out transform ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-white'
+                                            }`}
                                     >
                                         {item}
                                     </div>
