@@ -1,5 +1,5 @@
 import About from "./about/about";
-import List from "./List/List";
+import List from "./list/List";
 
 export {
     About,
