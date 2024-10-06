@@ -40,7 +40,7 @@ const List: React.FC = () => {
                                         ref={provided.innerRef}
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
-                                        className={`border border-gray-300 p-3 rounded-md transition-all duration-300 ease-in-out transform ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-white'
+                                        className={`border-2 border-blue-500 p-3 rounded-md transition-all duration-300 ease-in-out transform ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-blue-100'
                                             }`}
                                     >
                                         {item}
