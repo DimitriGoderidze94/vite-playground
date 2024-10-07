@@ -9,11 +9,8 @@ const About = () => {
     const openModal = () => {
         setIsModalOpen(true);
         toast.success('Data loaded successfully!', {
-            style: {
-                borderRadius: '8px',
-                background: '#333',
-                color: '#fff',
-            },
+            className: 'font-bold rounded-lg p-4 shadow-lg',
+            duration: 4000,
             iconTheme: {
                 primary: '#4ade80',
                 secondary: '#fff',
