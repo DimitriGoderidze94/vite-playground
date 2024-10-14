@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
 
 const List: React.FC = () => {
     const [list, setList] = useState([
@@ -25,34 +27,41 @@ const List: React.FC = () => {
     };
 
     return (
-        <DragDropContext onDragEnd={handleDragEnd}>
-            <Droppable droppableId="droppable-list">
-                {(provided) => (
-                    <div
-                        {...provided.droppableProps}
-                        ref={provided.innerRef}
-                        className="flex flex-col space-y-2 p-4 bg-gray-100 rounded-lg shadow-md"
-                    >
-                        {list.map(({ item, id }, index) => (
-                            <Draggable key={id} draggableId={id} index={index}>
-                                {(provided, snapshot) => (
-                                    <div
-                                        ref={provided.innerRef}
-                                        {...provided.draggableProps}
-                                        {...provided.dragHandleProps}
-                                        className={`border-2 border-blue-500 p-3 rounded-md transition-all duration-300 ease-in-out transform 
+        <>
+
+            <DragDropContext onDragEnd={handleDragEnd}>
+                <Droppable droppableId="droppable-list">
+                    {(provided) => (
+                        <div
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            className="flex flex-col space-y-2 p-4 bg-gray-100 rounded-lg shadow-md"
+                        >
+                            {list.map(({ item, id }, index) => (
+                                <Draggable key={id} draggableId={id} index={index}>
+                                    {(provided, snapshot) => (
+                                        <div
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            className={`border-2 border-blue-500 p-3 rounded-md transition-all duration-300 ease-in-out transform 
                                             ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-blue-100 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:scale-105'}`}
-                                    >
-                                        {item}
-                                    </div>
-                                )}
-                            </Draggable>
-                        ))}
-                        {provided.placeholder}
-                    </div>
-                )}
-            </Droppable>
-        </DragDropContext>
+                                        >
+                                            {item}
+                                        </div>
+                                    )}
+                                </Draggable>
+                            ))}
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+            </DragDropContext>
+            <a data-tooltip-id="my-tooltip" data-tooltip-content="Hello world!">
+                ◕‿‿◕
+            </a>
+            <Tooltip id="my-tooltip" />
+        </>
     );
 };
 
