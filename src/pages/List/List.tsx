@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
-import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
 
 const List: React.FC = () => {
