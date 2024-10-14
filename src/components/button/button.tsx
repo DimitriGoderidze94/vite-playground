@@ -4,7 +4,6 @@ import style from "./button.module.scss";
 interface ButtonProps {
     className: string
     text: string,
-
     onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined,
     disabled?: boolean,
 }
