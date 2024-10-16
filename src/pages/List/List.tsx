@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
 import { Tooltip } from 'react-tooltip';
+import style from "./list.module.scss"
 
 const List: React.FC = () => {
     const [list, setList] = useState([
@@ -29,7 +30,8 @@ const List: React.FC = () => {
         <>
 
             <DragDropContext onDragEnd={handleDragEnd}>
-                <Droppable droppableId="droppable-list">
+                <Droppable droppableId="droppable-list"
+                >
                     {(provided) => (
                         <div
                             {...provided.droppableProps}
@@ -47,7 +49,8 @@ const List: React.FC = () => {
                                             ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-blue-100 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:scale-105'}`}
                                         >
                                             {item}
-                                            <Tooltip id="my-tooltip" />
+                                            <Tooltip id="my-tooltip"
+                                                className={style.tooltip} />
                                         </div>
                                     )}
                                 </Draggable>
