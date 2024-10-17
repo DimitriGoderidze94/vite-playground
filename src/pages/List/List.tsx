@@ -41,7 +41,7 @@ const List: React.FC = () => {
                             {list.map(({ item, id }, index) => (
                                 <Draggable key={id} draggableId={id} index={index}>
                                     {(provided, snapshot) => (
-                                        <div data-tooltip-id="my-tooltip" data-tooltip-content={item}
+                                        <div data-tooltip-id={`${id}-my-tooltip`} data-tooltip-content={item}
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
@@ -49,7 +49,9 @@ const List: React.FC = () => {
                                             ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-blue-100 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:scale-105'}`}
                                         >
                                             {item}
-                                            <Tooltip id="my-tooltip"
+                                            <Tooltip id={`${id}-my-tooltip`}
+                                                isOpen
+                                                variant='info'
                                                 className={style.tooltip} />
                                         </div>
                                     )}
