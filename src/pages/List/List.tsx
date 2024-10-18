@@ -50,7 +50,6 @@ const List: React.FC = () => {
                                         >
                                             {item}
                                             <Tooltip id={`${id}-my-tooltip`}
-                                                noArrow
                                                 variant='info'
                                                 className={style.tooltip} />
                                         </div>
