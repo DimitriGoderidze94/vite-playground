@@ -49,9 +49,11 @@ const List: React.FC = () => {
                                             className={`border-2 border-blue-500 p-3 rounded-md transition-all duration-300 ease-in-out transform 
                                             ${snapshot.isDragging ? 'bg-blue-500 text-white shadow-lg scale-105' : 'bg-blue-100 hover:bg-blue-500 hover:text-white hover:shadow-lg hover:scale-105'}`}
                                         >
-                                            {item}
+                                            open {item}
                                             <Tooltip id={`${id}-my-tooltip`}
                                                 variant='info'
+                                                openOnClick
+                                                data-tooltip-place='right-end'
                                                 className={style.tooltip} />
                                         </div>
                                     )}
