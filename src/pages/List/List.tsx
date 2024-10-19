@@ -54,7 +54,8 @@ const List: React.FC = () => {
                                                 variant='info'
                                                 openOnClick
                                                 data-tooltip-place='right-end'
-                                                className={style.tooltip} />
+                                                className={style.tooltip}
+                                                clickable />
                                         </div>
                                     )}
                                 </Draggable>
