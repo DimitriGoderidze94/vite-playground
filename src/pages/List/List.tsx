@@ -5,13 +5,14 @@ import style from "./list.module.scss"
 
 const List: React.FC = () => {
     const [list, setList] = useState([
-        { item: 'item2', id: '2' },
-        { item: 'item3', id: '3' },
-        { item: 'item4', id: '4' },
-        { item: 'item5', id: '5' },
-        { item: 'item6', id: '6' },
-        { item: 'item7', id: '7' },
-        { item: 'item8', id: '8' },
+        { item: 'item 1', id: '1' },
+        { item: 'item 2', id: '2' },
+        { item: 'item 3', id: '3' },
+        { item: 'item 4', id: '4' },
+        { item: 'item 5', id: '5' },
+        { item: 'item 6', id: '6' },
+        { item: 'item 7', id: '7' },
+        { item: 'item 8', id: '8' },
     ]);
 
     const handleDragEnd = (result: DropResult) => {
