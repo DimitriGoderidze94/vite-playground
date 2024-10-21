@@ -8,7 +8,7 @@ const reducer = (state: number = initialState, action: Action) => {
         case ActionTypes.DEPOSIT:
             return state + action.payload;
         case ActionTypes.WITHDRAW:
-            return state - action.payload;
+            return state - action.payload > 0 ? state - action.payload : 0;
         case ActionTypes.BANKRUPT:
             return 0;
         default:
