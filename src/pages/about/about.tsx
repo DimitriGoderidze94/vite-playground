@@ -29,14 +29,19 @@ const About = () => {
 
     const dispatch = useDispatch();
 
-    const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(actionCreators, dispatch)
+    const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(actionCreators, dispatch);
+
+    const [chooseAmount, setChooseAmount] = useState(1);
 
     return (
         <div className={style.about}>
-            <h1>{amount}</h1>
-            <Button className={'primary'} text='Deposit' onClick={() => depositMoney(50)} />
-            <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(50)} />
+            <h1>current amount: {amount}</h1>
+            <input type="number" value={chooseAmount} onChange={(e) => setChooseAmount(Number(e.target.value))} />
+            <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseAmount)} />
+            <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(chooseAmount)} />
+            <br />
             <Button className={'primary'} text='Bankrupt' onClick={() => bankrupt()} />
+            <br />
             <Toaster position="top-right" reverseOrder={false} />
             <Button className={'primary'} text='Get Data' onClick={openModal} />
             <Modal isOpen={isModalOpen} onClose={closeModal} title="My Modal">
