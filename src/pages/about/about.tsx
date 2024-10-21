@@ -34,8 +34,8 @@ const About = () => {
     return (
         <div className={style.about}>
             <h1>{amount}</h1>
-            <Button className={'primary'} text='Deposit' onClick={() => depositMoney(100)} />
-            <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(100)} />
+            <Button className={'primary'} text='Deposit' onClick={() => depositMoney(50)} />
+            <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(50)} />
             <Button className={'primary'} text='Bankrupt' onClick={() => bankrupt()} />
             <Toaster position="top-right" reverseOrder={false} />
             <Button className={'primary'} text='Get Data' onClick={openModal} />
