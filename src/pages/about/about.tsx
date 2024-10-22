@@ -36,14 +36,19 @@ const About = () => {
     return (
         <div className={style.about}>
             <h1>current amount: {amount}</h1>
-            <input type="number" value={chooseAmount} onChange={(e) => setChooseAmount(Number(e.target.value))} />
-            <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseAmount)} />
-            <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(chooseAmount)} />
-            <br />
-            <Button className={'primary'} text='Bankrupt' onClick={() => bankrupt()} />
-            <br />
-            <Toaster position="top-right" reverseOrder={false} />
-            <Button className={'primary'} text='Get Data' onClick={openModal} />
+            <div className="flex items-center justify-center gap-4 mb-4">
+                <input type="number" value={chooseAmount} onChange={(e) => setChooseAmount(Number(e.target.value))} />
+                <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseAmount)} />
+            </div>
+            <div className="flex items-center justify-center gap-4 mb-4">
+                <input type="number" value={chooseAmount} onChange={(e) => setChooseAmount(Number(e.target.value))} />
+                <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(chooseAmount)} />
+            </div>
+            <div className="flex items-center justify-center gap-4 mb-4">
+                <Button className={'primary'} text='Bankrupt' onClick={() => bankrupt()} />
+                <Toaster position="top-right" reverseOrder={false} />
+                <Button className={'primary'} text='Get Data' onClick={openModal} />
+            </div>
             <Modal isOpen={isModalOpen} onClose={closeModal} title="My Modal">
                 <p>This is the modal content!</p>
             </Modal>
