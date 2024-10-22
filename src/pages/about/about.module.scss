@@ -1,6 +1,10 @@
 .about {
     margin: auto;
 
+    h1 {
+        margin-bottom: 20px;
+    }
+
     button {
         min-width: 200px;
         height: 40px;
@@ -9,5 +13,6 @@
     input {
         min-width: 200px;
         height: 40px;
+        padding: 0 8px;
     }
 }
