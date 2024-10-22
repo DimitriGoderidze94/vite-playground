@@ -31,18 +31,19 @@ const About = () => {
 
     const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(actionCreators, dispatch);
 
-    const [chooseAmount, setChooseAmount] = useState(1);
+    const [chooseDepositAmount, setDepositChooseAmount] = useState(1);
+    const [chooseWithdrawAmount, setWithdrawChooseAmount] = useState(1);
 
     return (
         <div className={style.about}>
             <h1>current amount: {amount}</h1>
             <div className="flex items-center justify-center gap-4 mb-4">
-                <input type="number" value={chooseAmount} onChange={(e) => setChooseAmount(Number(e.target.value))} />
-                <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseAmount)} />
+                <input type="number" value={chooseDepositAmount} onChange={(e) => setDepositChooseAmount(Number(e.target.value))} />
+                <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseDepositAmount)} />
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
-                <input type="number" value={chooseAmount} onChange={(e) => setChooseAmount(Number(e.target.value))} />
-                <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(chooseAmount)} />
+                <input type="number" value={chooseWithdrawAmount} onChange={(e) => setWithdrawChooseAmount(Number(e.target.value))} />
+                <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(chooseWithdrawAmount)} />
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
                 <Button className={'primary'} text='Bankrupt' onClick={() => bankrupt()} />
