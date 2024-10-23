@@ -36,7 +36,7 @@ const About = () => {
 
     return (
         <div className={style.about}>
-            <h1>current amount: {amount}</h1>
+            <h1>Bank: {amount}</h1>
             <div className="flex items-center justify-center gap-4 mb-4">
                 <input type="number" value={chooseDepositAmount} onChange={(e) => setDepositChooseAmount(Number(e.target.value))} />
                 <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseDepositAmount)} />
