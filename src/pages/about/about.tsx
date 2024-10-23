@@ -51,7 +51,7 @@ const About = () => {
                 <Button className={'primary'} text='Get Data' onClick={openModal} />
             </div>
             <Modal isOpen={isModalOpen} onClose={closeModal} title="My Modal">
-                <p>This is the modal content!</p>
+                <p>current amount: {amount}</p>
             </Modal>
         </div>
     );
