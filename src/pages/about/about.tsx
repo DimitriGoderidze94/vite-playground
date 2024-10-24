@@ -38,11 +38,11 @@ const About = () => {
         <div className={style.about}>
             <h1>Bank: {amount}</h1>
             <div className="flex items-center justify-center gap-4 mb-4">
-                <input type="number" value={chooseDepositAmount} onChange={(e) => setDepositChooseAmount(Number(e.target.value))} />
+                <input className='bg-blue-200' type="number" value={chooseDepositAmount} onChange={(e) => setDepositChooseAmount(Number(e.target.value))} />
                 <Button className={'primary'} text='Deposit' onClick={() => depositMoney(chooseDepositAmount)} />
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
-                <input type="number" value={chooseWithdrawAmount} onChange={(e) => setWithdrawChooseAmount(Number(e.target.value))} />
+                <input className='bg-blue-200' type="number" value={chooseWithdrawAmount} onChange={(e) => setWithdrawChooseAmount(Number(e.target.value))} />
                 <Button className={'primary'} text='Withdraw' onClick={() => withdrawMoney(chooseWithdrawAmount)} />
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
