@@ -8,13 +8,21 @@
         gap: 15px;
         margin-bottom: 20px;
 
+        .bank {
+            color: $primary;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
         .amount {
             background-color: white;
-            padding: 5px 30px;
+            padding: 2px 30px;
             width: fit-content;
             border-radius: 5px;
             color: $primary;
             border: 2px solid $primary;
+            font-weight: 600;
+            font-size: 18px;
         }
     }
 

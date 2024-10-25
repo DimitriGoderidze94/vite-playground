@@ -37,7 +37,7 @@ const About = () => {
     return (
         <div className={style.about}>
             <div className={style['amount-holder']}>
-                <span>Bank</span>
+                <span className={style.bank}>Bank</span>
                 <span className={style.amount}>{amount}</span>
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
