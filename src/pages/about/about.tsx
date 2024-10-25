@@ -36,7 +36,10 @@ const About = () => {
 
     return (
         <div className={style.about}>
-            <h1>Bank: {amount}</h1>
+            <div className={style['amount-holder']}>
+                <span>Bank</span>
+                <span className={style.amount}>{amount}</span>
+            </div>
             <div className="flex items-center justify-center gap-4 mb-4">
                 <input className='bg-blue-200' value={chooseDepositAmount}
                     onChange={(e) => {
