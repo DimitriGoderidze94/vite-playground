@@ -27,15 +27,17 @@
     }
 
     button {
-        min-width: 200px;
+        width: 200px;
         height: 40px;
+        max-width: 45%;
     }
 
     input {
-        min-width: 200px;
+        width: 200px;
         height: 40px;
         padding: 0 8px;
         border: 2px solid $primary;
         border-radius: 5px;
+        max-width: 45%;
     }
 }
