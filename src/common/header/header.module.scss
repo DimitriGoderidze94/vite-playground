@@ -3,7 +3,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    transition: transform 0.3s ease;
+    transition: transform 0.8s ease;
     z-index: 50;
-    background: linear-gradient(135deg, #2a90fd, #7be2ff, #7be2ff, #7be2ff, #2a90fd);
+
+    &.hidden {
+        transform: translateY(-100%);
+    }
 }

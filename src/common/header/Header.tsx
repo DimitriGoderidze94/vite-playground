@@ -1,9 +1,27 @@
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import style from './header.module.scss';
 
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const lastScrollY = useRef(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+                setIsOpen(true);
+            } else {
+                setIsOpen(false);
+            }
+            lastScrollY.current = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
-        <header className={`flex shadow-md py-4 px-4 sm:px-10 bg-blue-200 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header}`}>
+        <header className={`flex shadow-md py-4 px-4 sm:px-10 bg-blue-200 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header} ${isOpen ? style.hidden : ''}`}>
             <div className='flex flex-wrap items-center justify-between gap-5 w-full'>
                 <a href="">
                     <img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='sm:block  w-36 hidden' />
