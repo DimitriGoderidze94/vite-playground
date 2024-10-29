@@ -1,9 +1,12 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    height: $header-height;
     width: 100%;
-    box-shadow: $box-shadow;
-    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: 50;
+
+    &.hidden {
+        transform: translateY(-100%);
+    }
 }
