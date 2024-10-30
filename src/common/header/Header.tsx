@@ -22,9 +22,9 @@ const Header = () => {
     }, []);
     return (
         <header className={`flex bg-blue-200 shadow-md py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header} ${isOpen ? style.hidden : ''}`}>
-            <div className='flex flex-wrap items-center justify-between gap-5 w-full'>
-                <a href="">
-                    <img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='sm:block  w-36 hidden' />
+            <div className='flex flex-wrap items-center justify-between gap-1 w-full'>
+                <a className={style.logo} href="">
+                    <img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='sm:block  w-36' />
                 </a>
                 <div id="collapseMenu"
                     className='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
