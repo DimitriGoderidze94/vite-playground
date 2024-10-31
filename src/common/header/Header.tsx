@@ -21,13 +21,13 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     return (
-        <header className={`flex bg-blue-200 shadow-md py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header} ${isOpen ? style.hidden : ''}`}>
+        <header className={`flex bg-blue-100 shadow-md py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header} ${isOpen ? style.hidden : ''}`}>
             <div className='flex flex-wrap items-center justify-between gap-1 w-full'>
                 <a className={style.logo} href="">
                     <img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='sm:block  w-36' />
                 </a>
                 <div id="collapseMenu"
-                    className='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
+                    className='flex-1 max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
                     <button id="toggleClose" className='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 fill-black" viewBox="0 0 320.591 320.591">
                             <path
