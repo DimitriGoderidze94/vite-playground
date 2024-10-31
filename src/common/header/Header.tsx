@@ -21,7 +21,7 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     return (
-        <header className={`flex bg-blue-200 shadow-md py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header} ${isOpen ? style.hidden : ''}`}>
+        <header className={`flex bg-blue-100 shadow-md py-4 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50 mb-5 ${style.header} ${isOpen ? style.hidden : ''}`}>
             <div className='flex flex-wrap items-center justify-between gap-1 w-full'>
                 <a className={style.logo} href="">
                     <img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='sm:block  w-36' />
