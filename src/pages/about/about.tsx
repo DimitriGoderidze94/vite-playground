@@ -77,7 +77,7 @@ const About = () => {
   }
 
   return (
-    <div className={style.about}>
+    <div className={style["apolo-list"]}>
       {data?.characters?.results?.map((char) => {
         return (
           <div>

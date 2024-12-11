@@ -1,43 +1,50 @@
-.about {
-    margin: auto;
+// .about {
+//     margin: auto;
 
-    .amount-holder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
+//     .amount-holder {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 15px;
+//         margin-bottom: 20px;
 
-        .bank {
-            color: $primary;
-            font-weight: 600;
-            font-size: 20px;
-        }
+//         .bank {
+//             color: $primary;
+//             font-weight: 600;
+//             font-size: 20px;
+//         }
 
-        .amount {
-            background-color: white;
-            padding: 2px 30px;
-            width: fit-content;
-            border-radius: 5px;
-            color: $primary;
-            border: 2px solid $primary;
-            font-weight: 600;
-            font-size: 18px;
-        }
-    }
+//         .amount {
+//             background-color: white;
+//             padding: 2px 30px;
+//             width: fit-content;
+//             border-radius: 5px;
+//             color: $primary;
+//             border: 2px solid $primary;
+//             font-weight: 600;
+//             font-size: 18px;
+//         }
+//     }
 
-    button {
-        width: 200px;
-        height: 40px;
-        max-width: 45%;
-    }
+//     button {
+//         width: 200px;
+//         height: 40px;
+//         max-width: 45%;
+//     }
 
-    input {
-        width: 200px;
-        height: 40px;
-        padding: 0 8px;
-        border: 2px solid $primary;
-        border-radius: 5px;
-        max-width: 45%;
-    }
+//     input {
+//         width: 200px;
+//         height: 40px;
+//         padding: 0 8px;
+//         border: 2px solid $primary;
+//         border-radius: 5px;
+//         max-width: 45%;
+//     }
+// }
+
+.apolo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
