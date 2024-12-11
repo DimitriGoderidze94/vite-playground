@@ -5,31 +5,7 @@ import style from "./about.module.scss";
 // import { useDispatch, useSelector } from 'react-redux';
 // import { bindActionCreators } from '@reduxjs/toolkit';
 // import { actionCreators, State } from '../../state';
-import { useQuery, gql } from "@apollo/client";
-
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        image
-      }
-    }
-  }
-`;
-
-type Character = {
-  id: string;
-  name: string;
-  image: string;
-};
-
-type CharactersQueryResult = {
-  characters: {
-    results: Character[];
-  };
-};
+import { useCharacters } from "../../hooks/hooks";
 
 const About = () => {
   // const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,8 +35,7 @@ const About = () => {
   // const [chooseDepositAmount, setDepositChooseAmount] = useState<number | ''>(1);
   // const [chooseWithdrawAmount, setWithdrawChooseAmount] = useState<number | ''>(1);
 
-  const { error, loading, data } =
-    useQuery<CharactersQueryResult>(GET_CHARACTERS);
+  const { error, loading, data } = useCharacters();
 
   console.log({
     error,
