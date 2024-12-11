@@ -1,59 +1,97 @@
-import { useState } from 'react';
+import { useState } from "react";
 // import toast, { Toaster } from 'react-hot-toast';
-import style from './about.module.scss';
+import style from "./about.module.scss";
 // import { Button, Modal } from '../../components';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { bindActionCreators } from '@reduxjs/toolkit';
 // import { actionCreators, State } from '../../state';
-import { useQuery, gql } from '@apollo/client';
-
+import { useQuery, gql } from "@apollo/client";
 
 const GET_CHARACTERS = gql`
-query {
-  characters {
-    results {
-      id
-      name
-      image
+  query {
+    characters {
+      results {
+        id
+        name
+        image
+      }
     }
   }
-}
 `;
 
+type Character = {
+  id: string;
+  name: string;
+  image: string;
+};
+
+type CharactersQueryResult = {
+  characters: {
+    results: Character[];
+  };
+};
 
 const About = () => {
-    // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // const amount = useSelector((state: State) => state.bank)
+  // const amount = useSelector((state: State) => state.bank)
 
-    // const openModal = () => {
-    //     setIsModalOpen(true);
-    //     toast.success('Data loaded successfully!', {
-    //         className: 'font-bold rounded-lg p-4 shadow-lg',
-    //         duration: 4000,
-    //         iconTheme: {
-    //             primary: '#4ade80',
-    //             secondary: '#fff',
-    //         },
-    //     });
-    // };
+  // const openModal = () => {
+  //     setIsModalOpen(true);
+  //     toast.success('Data loaded successfully!', {
+  //         className: 'font-bold rounded-lg p-4 shadow-lg',
+  //         duration: 4000,
+  //         iconTheme: {
+  //             primary: '#4ade80',
+  //             secondary: '#fff',
+  //         },
+  //     });
+  // };
 
-    // const closeModal = () => {
-    //     setIsModalOpen(false);
-    // };
+  // const closeModal = () => {
+  //     setIsModalOpen(false);
+  // };
 
-    // const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-    // const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(actionCreators, dispatch);
+  // const { depositMoney, withdrawMoney, bankrupt } = bindActionCreators(actionCreators, dispatch);
 
-    // const [chooseDepositAmount, setDepositChooseAmount] = useState<number | ''>(1);
-    // const [chooseWithdrawAmount, setWithdrawChooseAmount] = useState<number | ''>(1);
+  // const [chooseDepositAmount, setDepositChooseAmount] = useState<number | ''>(1);
+  // const [chooseWithdrawAmount, setWithdrawChooseAmount] = useState<number | ''>(1);
 
-    const something = useQuery(GET_CHARACTERS);
+  const { error, loading, data } =
+    useQuery<CharactersQueryResult>(GET_CHARACTERS);
 
-    return (
-        <div className={style.about}>
-            {/* <div className={style['amount-holder']}>
+  console.log({
+    error,
+    loading,
+    data,
+  });
+
+  if (loading) {
+    return <div>spinner...</div>;
+  }
+
+  if (error) {
+    return <div>er...</div>;
+  }
+
+  return (
+    <div className={style["apolo-list"]}>
+      {data?.characters?.results?.map((char) => {
+        return (
+          <div>
+            <img src={char.image} alt="" />
+            <h2>{char.name}</h2>
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <div className={style.about}>
+      {/* <div className={style['amount-holder']}>
                 <span className={style.bank}>Bank</span>
                 <span className={style.amount}>{amount}</span>
             </div>
@@ -83,8 +121,8 @@ const About = () => {
             <Modal isOpen={isModalOpen} onClose={closeModal} title="My Modal">
                 <p>current amount: {amount}</p>
             </Modal> */}
-        </div>
-    );
+    </div>
+  );
 };
 
 export default About;
