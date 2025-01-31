@@ -3,13 +3,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    transition: 0.8s ease;
+    transition: 0.7s ease;
     z-index: 50;
     opacity: 1;
     border-bottom: 1px solid rgb(200, 200, 255);
 
     &.hidden {
-        opacity: 0.6;
+        opacity: 0.5;
         transform: translateY(-100%);
     }
 
